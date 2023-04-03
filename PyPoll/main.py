@@ -2,13 +2,13 @@ import os
 import csv
 
 # Pull in CSV Data
-election_data = os.path.join('.', 'Resources_2', 'election_data.csv')
+election_data = os.path.join('.', 'PyPoll','Resources_2', 'election_data.csv')
 
 
 # Define the function and have it accept the 'state_data' as its sole parameter
 def write_poll(election_data):
 
-#Set variables
+    #Set variables
     votes = 0
     candidates = []
     candidate_1 = ''
@@ -46,7 +46,7 @@ def write_poll(election_data):
             if row[2] == candidate_1:
                 candidate_1_votes = candidate_1_votes + 1
             elif row[2] == candidate_2: 
-                candidate_1_votes = candidate_1_votes + 1
+                candidate_2_votes = candidate_2_votes + 1
             elif row[2] == candidate_3:
                 candidate_3_votes = candidate_3_votes + 1
     
@@ -72,7 +72,7 @@ def write_poll(election_data):
     print(f"Winner: {won}\n")
 
     # Write Analysis
-    input_path = './Analysis/Analysis.txt'
+    input_path = './PyPoll/Analysis/Analysis.txt'
     with open(input_path, 'w') as analysis_txt:
         analysis_txt.write("Election Results\n")
         analysis_txt.write("----------------------------\n")
